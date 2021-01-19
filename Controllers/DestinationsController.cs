@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TravelApi.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace TravelApi.Controllers
 {
@@ -35,6 +37,22 @@ namespace TravelApi.Controllers
     public ActionResult<Destination> Get(int id)
     {
       return _db.Destinations.FirstOrDefault(entry => entry.DestinationId == id);
+    }
+
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody] Destination destination)
+    {
+      destination.DestinationId = id;
+      _db.Entry(destination).State=EntityState.Modified;
+      _db.SaveChanges();
+    }
+
+    [HttpDelete("{id}")]
+    public void Delete(int id)
+    {
+      var destinationDeletion = _db.Destinations.FirstOrDefault(entry => entry.DestinationId == id);
+      _db.Destinations.Remove(destinationDeletion);
+      _db.SaveChanges();
     }
   }
 }
