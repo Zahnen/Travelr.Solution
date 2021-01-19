@@ -54,5 +54,28 @@ namespace TravelApi.Controllers
       _db.Destinations.Remove(destinationDeletion);
       _db.SaveChanges();
     }
+
+    [HttpGet]
+    public ActionResult<IEnumerable<Destination>> Get(string CityName, string Country, int Rating)
+    {
+      var query = _db.Destinations.AsQueryable();
+
+      if (CityName != null)
+      {
+        query = query.Where(entry => entry.CityName == CityName);
+      }
+
+      if (Country != null)
+      {
+        query = query.Where(entry => entry.Country == Country);
+      }
+
+      if (Rating != 0)
+      {
+        query = query.Where(entry => entry.Rating == Rating);
+      }    
+
+      return query.ToList();
+    }
   }
 }
