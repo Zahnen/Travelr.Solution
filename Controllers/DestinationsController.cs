@@ -30,5 +30,11 @@ namespace TravelApi.Controllers
       _db.Destinations.Add(destination);
       _db.SaveChanges();
     }
+
+    [HttpGet("{id}")]
+    public ActionResult<Destination> Get(int id)
+    {
+      return _db.Destinations.FirstOrDefault(entry => entry.DestinationId == id);
+    }
   }
 }
