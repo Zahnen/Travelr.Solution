@@ -2,6 +2,8 @@
   Layout="_Layout";
 }
 
+@* @model ClientTravelr.Models.Destination; *@
+
 <h1 class="display-2">All Destinations</h1>
 
   @foreach(Destination destination in Model)
@@ -17,6 +19,11 @@
         </ul>
       </div>
       <div class="card-footer">
+      @using (@Html.BeginForm("Delete", "Destinations"))
+      {
+        @Html.Hidden("id", @destination.DestinationId)
+        <input class="btn btn-default" type="submit" value="Delete">
+      }
       </div>
     </div>
   }
