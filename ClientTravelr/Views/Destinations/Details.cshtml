@@ -1,0 +1,18 @@
+@{
+  Layout="_Layout";
+}
+
+@model ClientTravelr.Models.Destination;
+
+<h1 class="display-2">@Model.CityName</h1>
+<hr>
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Country: @Model.Country</h3>
+    <h3>Rating: @Model.Rating </h3>
+  </div>
+  <div class="col-sm-6">
+    <h3>Review:</h3>
+    <p>@Model.Review</p>
+  </div>
+</div>

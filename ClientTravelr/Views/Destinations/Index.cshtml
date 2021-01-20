@@ -1,0 +1,22 @@
+@{
+  Layout="_Layout";
+}
+
+<h1 class="display-2">All Destinations</h1>
+
+  @foreach(Destination destination in Model)
+  {
+    <div class="card">
+      <div class="card-header">
+        <a href="/Destinations/Details/@(destination.DestinationId)" class="display-3">@destination.CityName</a>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Country: @destination.Country</li>
+          <li>Rating: @destination.Rating</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+      </div>
+    </div>
+  }
