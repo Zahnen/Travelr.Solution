@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ClientTravelAPI.Models;
+using ClientTravelr.Models;
 
-namespace ClientTravelAPI.Controllers
+namespace ClientTravelr.Controllers
 {
     public class HomeController : Controller
     {

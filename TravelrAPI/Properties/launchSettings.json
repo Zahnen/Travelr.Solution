@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "TravelApi.Solution": {
+    "Travelr.Solution": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

@@ -1,6 +1,6 @@
 <br>
 <h1 align = "center">
-  <b> Travel Destinations </b>
+  <b> Travelr </b>
 </h1>
 
 <p align = "center">
@@ -9,7 +9,7 @@
 <p align = "center"> Created January 19, 2021 </p>
 
 <p align = "center">
-  By Kaila Sprague McRae
+  By Kaila Sprague McRae & Zahnen Garner
 </p>
 
 --------------------
@@ -120,7 +120,9 @@ Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/Travel.S
 
 ## 📫 Support and contact details
 
-If you run into any problems or have any questions please contact me via [email](mailto:kaila.sprague@icloud.com).
+If you run into any problems or have any questions please contact us:
+- [Kaila Sprague McRae](mailto:kaila.sprague@icloud.com)
+- [Zahnen Garner](mailto:zahnen@gmail.com) 
 
 ---------------------------
 
@@ -146,4 +148,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Copyright (c) 2020 Kaila Sprague McRae
+Copyright (c) 2020 Kaila Sprague McRae & Zahnen Garner
