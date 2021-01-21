@@ -3,6 +3,9 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Travelr.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using Travelr.Services;
+using Travelr.Entities;
 
 
 namespace Travelr.Controllers
@@ -19,6 +22,7 @@ namespace Travelr.Controllers
     }
 
     // GET api/destinations
+    [Authorize(Roles = Role.Admin)]
     [HttpGet]
     public ActionResult<IEnumerable<Destination>> Get(string CityName, string Country, int Rating)
     {
