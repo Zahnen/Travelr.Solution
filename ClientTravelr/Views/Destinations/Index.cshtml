@@ -22,8 +22,9 @@
       @using (@Html.BeginForm("Delete", "Destinations"))
       {
         @Html.Hidden("id", @destination.DestinationId)
-        <input class="btn btn-default" type="submit" value="Delete">
+        <input class="btn btn-outline-danger" type="submit" value="Delete">
       }
       </div>
     </div>
+    <br>
   }
