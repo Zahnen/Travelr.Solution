@@ -22,7 +22,7 @@ namespace Travelr.Controllers
     }
 
     // GET api/destinations
-    [Authorize(Roles = Role.Admin)]
+    [Authorize]
     [HttpGet]
     public ActionResult<IEnumerable<Destination>> Get(string CityName, string Country, int Rating)
     {
@@ -47,6 +47,7 @@ namespace Travelr.Controllers
     }
 
     // POST api/destinations
+    [Authorize(Roles = Role.Admin)]
     [HttpPost]
     public void Post([FromBody] Destination destination)
     {
@@ -54,20 +55,23 @@ namespace Travelr.Controllers
       _db.SaveChanges();
     }
 
+    [Authorize]
     [HttpGet("{id}")]
     public ActionResult<Destination> Get(int id)
     {
       return _db.Destinations.FirstOrDefault(entry => entry.DestinationId == id);
     }
 
+    [Authorize(Roles = Role.Admin)]
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Destination destination)
     {
       destination.DestinationId = id;
-      _db.Entry(destination).State=EntityState.Modified;
+      _db.Entry(destination).State = EntityState.Modified;
       _db.SaveChanges();
     }
 
+    [Authorize(Roles = Role.Admin)]
     [HttpDelete("{id}")]
     public void Delete(int id)
     {

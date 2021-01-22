@@ -117,6 +117,77 @@ Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/Travel.S
 2. At this point you should be able to click on the link to the local server's url path to view the compiled project. 
 
 --------------------------
+# 🛸 API Documentation
+In order to explore the endpoints of this API, we suggest that you use [Postman](https://www.postman.com/). Postman will allow you to make GET, POST, PUT, and DELETE requests with the TravelrApi.
+
+## JWT Web Token Authorization
+
+- Travelr API uses JWT Web Tokens to authorize users based on their user roles. "User" users are able to make GET requests only, whereas "Admin" users are able to make POST, PUT, and DELETE in addition to GET requests.
+- To receive an authorization token, you will first need to authenticate a user in either an "Admin" or "User" role. For the purposes of this API demo, user paramaters have been generated for both roles. Please refer to the below authentication instructions based on the user role you'd like to create.
+
+### "Admin" User Creation
+
+- Create a POST request to http://localhost:5004/api/users/authenticate
+- Navigate to the "Body" tab of your request and select "Raw Data" from the offered options followed by "JSON" in the dropdown to the right of your selection. Enter the following code snippet into the body field
+```
+{
+    "Username": "admin",
+    "Password": "admin"
+}
+```
+The response will generate a bearer token. Copy this token for use when you create a new request (GET, POST, DELETE, PUT). When creating a new request, navigate to the "Authorizations" tab. Select "Bearer Token" as the authorization type, and paste your copied token into the "Token" field. This token will authorize your requests. 
+
+### "User" User Creation
+
+
+- Create a POST request to http://localhost:5004/api/users/authenticate
+- Navigate to the "Body" tab of your request and select "Raw Data" from the offered options followed by "JSON" in the dropdown to the right of your selection. Enter the following code snippet into the body field
+```
+{
+    "Username": "user",
+    "Password": "user"
+}
+```
+The response will generate a bearer token. Copy this token for use when you create a new GET request. When creating a new request, navigate to the "Authorizations" tab. Select "Bearer Token" as the authorization type, and paste your copied token into the "Token" field. This token will authorize your GET requests only. 
+
+
+## Endpoints
+
+Base URL : `http://localhost:5004`
+
+### HTTP Request Structure
+
+```
+GET /api/destination
+POST /api/destination
+GET /api/destination{id}
+PUT /api/destination{id}
+DELETE /api/destination{id}
+```
+### Path Paramaters
+
+| Parameter | Type | Default | Required | Description |
+| :------------- | :------------- | :------------- | :------------- |:------------- |
+| cityname | string | none | false | Return matches by city name |
+| country | string | none | false | Return matches by country name |
+| rating | int | none | false | Return matches by rating number between 0-5 |
+
+### Example Query
+
+`http://localhost:5004/api/destination/?country=japan&rating=5`
+
+### Sample JSON Response
+
+```
+{
+  "Id": 6,
+  "CityName": "Tokyo",
+  "Country": "Japan",
+  "Review": "Best place ever!",
+  "Rating": 5
+}
+```
+--------------------------
 
 ## 📫 Support and contact details
 
